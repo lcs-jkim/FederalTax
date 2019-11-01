@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var TotalIncome: UITextField!
     @IBOutlet weak var TotalTaxDue: UILabel!
     @IBOutlet weak var EffectiveTaxRate: UILabel!
+    @IBOutlet weak var ErrorNameMessage: UILabel!
+    @IBOutlet weak var ErrorIncomeMessage: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +26,16 @@ class ViewController: UIViewController {
     @IBAction func CalculateTax(_ sender: Any) {
         
         guard Name.text != nil else {
+            ErrorNameMessage.text = ("Please enter your name")
             return
         }
-        guard let TotalIncomeAsDouble = TotalIncome.text else {
+        guard let TotalIncomeString = TotalIncome.text else {
+            ErrorIncomeMessage.text = ("Please enter your income")
             return
         }
-        
-        switch TotalTaxDue.text {
-        case <#pattern#>:
-            <#code#>
-        default:
-            <#code#>
+        guard let TotalIncomeDouble = Double(TotalIncomeString) else {
+            ErrorIncomeMessage.text = ("Please enter a valid input")
+            return
         }
     
     }
