@@ -41,31 +41,31 @@ class ViewController: UIViewController {
             let FinalTaxDue = (TotalIncomeDouble * 0.15)
             let FinalEffectiveTaxRate = (FinalTaxDue/TotalIncomeDouble)
             
-            TotalTaxDue.text = String(FinalTaxDue)
-            EffectiveTaxRate.text = String(FinalTaxDue)
+            TotalTaxDue.text = String(format: "$%.2f", FinalTaxDue)
+            EffectiveTaxRate.text = String(FinalEffectiveTaxRate)
         case 47631...95259:
             let FinalTaxDue = (7144.5 + (TotalIncomeDouble-47630)*0.205)
             let FinalEffectiveTaxRate = (FinalTaxDue/TotalIncomeDouble)
             
-            TotalTaxDue.text = String(FinalTaxDue)
-            EffectiveTaxRate.text = String(FinalTaxDue)
+           TotalTaxDue.text = String(format: "$%.2f", FinalTaxDue)
+                EffectiveTaxRate.text = String(FinalEffectiveTaxRate)
         case 95260...147667:
             let FinalTaxDue = (16908.445 + (TotalIncomeDouble - 95259) * 0.26)
             let FinalEffectiveTaxRate = (FinalTaxDue/TotalIncomeDouble)
             
-            TotalTaxDue.text = String(FinalTaxDue)
-            EffectiveTaxRate.text = String(FinalTaxDue)
+            TotalTaxDue.text = String(format: "$%.2f", FinalTaxDue)
+                 EffectiveTaxRate.text = String(FinalEffectiveTaxRate)
         case 147668...210371:
             let FinalTaxDue = (30534.525 + (TotalIncomeDouble - 147667) * 0.29)
             let FinalEffectiveTaxRate = (FinalTaxDue/TotalIncomeDouble)
             
-            TotalTaxDue.text = String(FinalTaxDue)
-            EffectiveTaxRate.text = String(FinalTaxDue)
+           TotalTaxDue.text = String(format: "$%.2f", FinalTaxDue)
+                EffectiveTaxRate.text = String(FinalEffectiveTaxRate)
         case 210372...9000000000000:
             let FinalTaxDue = (48718.685 + (TotalIncomeDouble * 0.33))
             let FinalEffectiveTaxRate = (FinalTaxDue/TotalIncomeDouble)
-            TotalTaxDue.text = String(FinalTaxDue)
-            EffectiveTaxRate.text = String(FinalTaxDue)
+           TotalTaxDue.text = String(format: "$%.2f", FinalTaxDue)
+                EffectiveTaxRate.text = String(FinalEffectiveTaxRate)
         default:
             print("Damn you rich")
         }
