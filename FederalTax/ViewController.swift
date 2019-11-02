@@ -38,6 +38,15 @@ class ViewController: UIViewController {
             return
         }
     
+        switch TotalIncomeDouble {
+        case 0...47630:
+            let FinalTaxDue = (TotalIncomeDouble * 0.15)
+        case 47630...95259:
+            let FinalTaxDue = (7144.5 + (TotalIncomeDouble-47630)*0.205)
+        default:
+            print("yeet")
+        }
+        
     }
 
 }
