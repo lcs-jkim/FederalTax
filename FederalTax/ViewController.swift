@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     }
     @IBAction func CalculateTax(_ sender: Any) {
         
-        
         guard let NameString = Name.text else {
             return
         }
@@ -37,7 +36,6 @@ class ViewController: UIViewController {
             return
         }
     
-        
         switch TotalIncomeDouble {
         case 0...47630:
             let FinalTaxDue = (TotalIncomeDouble * 0.15)
