@@ -62,7 +62,7 @@ class ViewController: UIViewController {
            TotalTaxDue.text = String(format: "$%.2f", FinalTaxDue)
             EffectiveTaxRate.text = String(format: "$%.2f", FinalEffectiveTaxRate)
         default:
-            let FinalTaxDue = (48718.16 + TotalIncomeDouble * 0.33)
+            let FinalTaxDue = (48718.685 + (TotalIncomeDouble - 210371) * 0.33)
             let FinalEffectiveTaxRate = (FinalTaxDue/TotalIncomeDouble)
             
             TotalTaxDue.text = String(format: "$%.2f", FinalTaxDue)
