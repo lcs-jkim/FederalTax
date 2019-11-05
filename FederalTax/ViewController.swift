@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     }
     @IBAction func CalculateTax(_ sender: Any) {
         
+        
         guard let NameString = Name.text else {
             return
         }
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
             return
         }
     
+        
         switch TotalIncomeDouble {
         case 0...47630:
             let FinalTaxDue = (TotalIncomeDouble * 0.15)
@@ -61,14 +63,12 @@ class ViewController: UIViewController {
             
            TotalTaxDue.text = String(format: "$%.2f", FinalTaxDue)
             EffectiveTaxRate.text = String(format: "$%.2f", FinalEffectiveTaxRate)
-        case 210372...9000000000000:
-            let FinalTaxDue = (48718.685 + (TotalIncomeDouble * 0.33))
+        default:
+            let FinalTaxDue = (48718.16 + TotalIncomeDouble * 0.33)
             let FinalEffectiveTaxRate = (FinalTaxDue/TotalIncomeDouble)
             
-           TotalTaxDue.text = String(format: "$%.2f", FinalTaxDue)
+            TotalTaxDue.text = String(format: "$%.2f", FinalTaxDue)
             EffectiveTaxRate.text = String(format: "$%.2f", FinalEffectiveTaxRate)
-        default:
-            print("Damn you rich")
         }
         
         
